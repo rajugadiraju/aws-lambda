@@ -8,7 +8,7 @@ phases:
       - echo "Zipping deployment package..."
       - ls
       - pwd
-      - cd lib
+      - ls
       - zip -r9 ../deployment_package.zip .
       - cd ..
       - zip -g deployment_package.zip lambda_function.py
