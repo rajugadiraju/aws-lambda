@@ -8,7 +8,7 @@ phases:
       # Add any other build commands here
   post_build:
     commands:
-      - aws lambda update-function-code --function-name YourFunctionName --zip-file fileb://deployment_package.zip
+      - aws lambda update-function-code --function-name likith_function --zip-file fileb://deployment_package.zip
       # Replace YourFunctionName with the actual name of your Lambda function
       # This command updates the Lambda function code with the contents of deployment_package.zip
       # Make sure to configure AWS CLI with appropriate credentials and region before running this command
