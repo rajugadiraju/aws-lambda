@@ -9,7 +9,15 @@ phases:
       - echo Build started on `date`
       - echo Installing dependencies...
       - pip install -r requirements.txt --target .
+      - echo Copying appspec.yml to build artifacts...
+      - cp appspec.yml build/   # Assuming appspec.yml is in the root directory of your source code
       - echo Build completed on `date`
+  post_build:
+    commands:
+      - echo Creating build artifact zip...
+      - cd build
+      - zip -r ../my_app.zip *   # Assuming you want to create a zip file of the build artifacts
+      - cd ..
 artifacts:
   files:
-    - '**/*'
+    - my_app.zip
