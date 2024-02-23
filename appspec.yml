@@ -4,4 +4,7 @@ Resources:
       Type: AWS::Lambda::Function
       Properties:
         Name: "newpython"
+        Alias: "python-alias"
+        CurrentVersion: "1"
+        TargetVersion: "*"
 Hooks:
