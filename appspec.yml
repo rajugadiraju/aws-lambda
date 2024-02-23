@@ -5,8 +5,13 @@ Resources:
       Properties:
         Name: "newpython"
         Alias: "python-alias"
-        CurrentVersion: 1
-        TargetVersion: "*"
+        # Update with the correct version based on your desired deployment behavior:
+        CurrentVersion: "2"  # Replace with the specific version you want to deploy
+        # OR
+        TargetVersion: "*"  # Deploy to the latest published version
+
+        # Additional properties as needed for your Lambda function
+
 Hooks:
   - BeforeAllowTraffic: "LambdaFunctionToValidateBeforeTrafficShift"
   - AfterAllowTraffic: "LambdaFunctionToValidateAfterTrafficShift"
