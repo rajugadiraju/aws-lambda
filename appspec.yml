@@ -1,6 +1,6 @@
-version: 0.0
+version: 0.1
 Resources:
-  - TargetService:
+  - myLambdaFunction:
       Type: AWS::Lambda::Function
       Properties:
         Name: "newpython"
@@ -8,3 +8,5 @@ Resources:
         CurrentVersion: "1"
         TargetVersion: "*"
 Hooks:
+  - BeforeAllowTraffic: "LambdaFunctionToValidateBeforeTrafficShift"
+  - AfterAllowTraffic: "LambdaFunctionToValidateAfterTrafficShift"
