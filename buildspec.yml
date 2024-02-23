@@ -1,17 +1,15 @@
 version: 0.2
 
 phases:
+  install:
+    runtime-versions:
+      python: 3.8
   build:
     commands:
-      - git pull origin main # Ensure you have the latest changes from GitHub
-      - zip -g deployment_package.zip lambda_function.py # Update the lambda_function.py in the deployment package
-      # Add any other build commands here
-  post_build:
-    commands:
-      - aws lambda update-function-code --function-name likith_function --zip-file fileb://deployment_package.zip
-      # Replace YourFunctionName with the actual name of your Lambda function
-      # This command updates the Lambda function code with the contents of deployment_package.zip
-      # Make sure to configure AWS CLI with appropriate credentials and region before running this command
+      - echo Build started on `date`
+      - echo Installing dependencies...
+      - pip install -r requirements.txt --target .
+      - echo Build completed on `date`
 artifacts:
   files:
-    - deployment_package.zip # Include the deployment package as an artifact
+    - '**/*'
