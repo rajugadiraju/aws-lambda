@@ -4,9 +4,9 @@ Resources:
       Type: AWS::Lambda::Function
       Properties:
         Name: "newpython"
-        Alias: "python-alias"
+        # Alias: "python-alias"
         # Update with the correct version based on your desired deployment behavior:
-        CurrentVersion: "2"  # Replace with the specific version you want to deploy
+        CurrentVersion: "1"  # Replace with the specific version you want to deploy
         # OR
         TargetVersion: "*"  # Deploy to the latest published version
 
