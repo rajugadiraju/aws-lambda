@@ -3,13 +3,8 @@ Resources:
   - myLambdaFunction:
       Type: AWS::Lambda::Function
       Properties:
-        Name: MyLambdaFunction
-        Alias: MyLambdaFunctionAlias
-        # Use a placeholder for TargetVersion
-        TargetVersion: PLACEHOLDER_FOR_TARGET_VERSION
-        # CurrentVersion can be left empty
-        # CurrentVersion: MyLambdaFunctionVersion
-        DeploymentId: CodeDeployDeploymentId
+        Name: newpython
+        Alias: python-alias
 hooks:
   - BeforeInstall:
       - location: scripts/before_install.sh
