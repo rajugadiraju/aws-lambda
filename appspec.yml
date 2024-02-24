@@ -1,17 +1,19 @@
-version: 1.0
+version: 0.0
 Resources:
   - myLambdaFunction:
       Type: AWS::Lambda::Function
       Properties:
-        Name: "newpython"
-        Alias: "python-alias"
-        # Update with the correct version based on your desired deployment behavior:
-        CurrentVersion: "1"  # Replace with the specific version you want to deploy
-        # OR
-        TargetVersion: "*"  # Deploy to the latest published version
-
-        # Additional properties as needed for your Lambda function
-
-Hooks:
-  - BeforeAllowTraffic: "LambdaFunctionToValidateBeforeTrafficShift"
-  - AfterAllowTraffic: "LambdaFunctionToValidateAfterTrafficShift"
+        Name: MyLambdaFunction
+        Alias: MyLambdaFunctionAlias
+        # Use a placeholder for TargetVersion
+        TargetVersion: PLACEHOLDER_FOR_TARGET_VERSION
+        # CurrentVersion can be left empty
+        # CurrentVersion: MyLambdaFunctionVersion
+        DeploymentId: CodeDeployDeploymentId
+hooks:
+  - BeforeInstall:
+      - location: scripts/before_install.sh
+        runas: root
+  - AfterInstall:
+      - location: scripts/after_install.sh
+        runas: root
