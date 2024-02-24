@@ -1,7 +1,9 @@
 #!/bin/bash
 
-# Install dependencies
-pip3 install -r requirements.txt
+# Update Lambda function code with the new deployment package
+aws lambda update-function-code --function-name MyLambdaFunction --zip-file fileb://lambda_function.zip
 
-# Zip the Lambda function code
-zip -r lambda_function.zip lambda_function.py
+# Optional: You can also update the Lambda function configuration here if needed
+# Example: aws lambda update-function-configuration --function-name MyLambdaFunction --timeout 30 --handler lambda_function.handler
+
+echo "After installation script executed successfully"

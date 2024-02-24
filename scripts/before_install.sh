@@ -1,5 +1,4 @@
 #!/bin/bash
 
-# Ensure Python and pip are installed
-apt-get update
-apt-get install -y python3 python3-pip
+# Nothing to do before installation for a simple "Hello World" Python Lambda function
+echo "Before installation script executed successfully"
