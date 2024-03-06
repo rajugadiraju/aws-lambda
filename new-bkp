@@ -3,14 +3,18 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      python: 3.11
-  pre_build:
-    commands:
-      - pip install -r requirements.txt -t build/
+      python: 3.8
   build:
     commands:
-      - cd build/
-      - zip -r lambda_function.zip .
+      - echo Build started on `date`
+      - echo Installing dependencies...
+      - pip install -r requirements.txt --target .
+      - echo Creating build directory...
+      - mkdir build
+      - echo Copying appspec.yml to build directory...
+      - cp appspec.yml build/
+      - echo Build completed on `date`
 artifacts:
   files:
-    - lambda_function.zip
+    - '**/*'
+    - build/appspec.yml
