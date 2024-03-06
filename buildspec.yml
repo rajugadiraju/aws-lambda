@@ -10,11 +10,11 @@ phases:
   build:
     commands:
       - echo "Building Lambda deployment package..."
-      - zip -r lambda_function.zip . -x "*.yml*"
-      - aws lambda update-function-code --function-name mylambda --zip-file fileb://lambda_function.zip
+      - zip -r raju.zip . -x "*.yml*"
+      - aws lambda update-function-code --function-name mylambda --zip-file fileb://raju.zip
       - sleep 10
-      - aws lambda invoke --function-name my-function --payload file://./event.json output.json
-      - cat output.json
+      # - aws lambda invoke --function-name my-function --payload file://./event.json output.json
+      # - cat output.json
   post_build:
     commands:
       - echo "Lambda deployment package created successfully."
