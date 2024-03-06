@@ -12,9 +12,9 @@ phases:
       - echo "Building Lambda deployment package..."
       - cd build/
       - zip -r ../lambda_function.zip . -x "*.git*"
-      - pwd
-      - ls
       - cd ..
+      - ls
+      - pwd
   post_build:
     commands:
       - echo "Lambda deployment package created successfully."
