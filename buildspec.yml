@@ -15,4 +15,4 @@ phases:
       - ls
 artifacts:
   files:
-    - lambda_function.zip
+    - /codebuild/output/src4290578079/src/build/lambda_function.zip
