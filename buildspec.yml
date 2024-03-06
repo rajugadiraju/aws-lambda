@@ -11,8 +11,7 @@ phases:
     commands:
       - cd build/
       - zip -r lambda_function.zip .
-      - pwd
-      - ls
+      - aws s3 cp lambda_function.zip s3://dafdfedfad/
 artifacts:
   files:
-    - /codebuild/output/src4290578079/src/build/lambda_function.zip
+    - lambda_function.zip
