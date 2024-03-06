@@ -13,8 +13,7 @@ phases:
     commands:
       - echo "Building Lambda deployment package..."
       - ls
-      - zip -r ../lambda_function.zip . -x "*.git*"
-      - cd ..
+      - zip -r lambda_function.zip . -x "*.git*"
       - ls
       - pwd
       - aws lambda update-function-code --function-name mylambda --zip-file fileb://lambda_function.zip
