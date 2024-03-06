@@ -11,7 +11,7 @@ phases:
     commands:
       - echo "Building Lambda deployment package..."
       - zip -r raju.zip . -x "*.yml*"
-      - aws lambda update-function-code --function-name mylambda --zip-file fileb://raju.zip
+      - aws lambda update-function-code --function-name raju_lambda --zip-file fileb://raju.zip
       - sleep 10
       # - aws lambda invoke --function-name my-function --payload file://./event.json output.json
       # - cat output.json
