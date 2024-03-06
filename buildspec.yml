@@ -18,8 +18,8 @@ phases:
       - ls
       - pwd
       - aws lambda update-function-code --function-name mylambda --zip-file fileb://lambda_function.zip
-      - sleep 30
-      - aws lambda invoke --function-name mylambda --payload file:///codebuild/output/src2319492662/src/event.json output.json
+      - sleep 10
+      - aws lambda invoke --function-name my-function --payload file://./event.json output.json
       - cat output.json
   post_build:
     commands:
