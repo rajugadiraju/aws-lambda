@@ -11,6 +11,7 @@ phases:
     commands:
       - echo "Building Lambda deployment package..."
       - cd build/
+      - ls
       - zip -r ../lambda_function.zip . -x "*.git*"
       - cd ..
       - ls
