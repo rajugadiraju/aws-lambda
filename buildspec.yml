@@ -11,6 +11,8 @@ phases:
     commands:
       - cd build/
       - zip -r lambda_function.zip .
+      - pwd
+      - ls
 artifacts:
   files:
     - lambda_function.zip
