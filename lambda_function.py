@@ -6,5 +6,5 @@ def lambda_handler(event, context):
     greeting = f'Hello, {name}!'
     return {
         'statusCode': 200,
-        'body': greetings Idiot
+        'body': greetings
     }
