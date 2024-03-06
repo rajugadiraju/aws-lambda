@@ -9,7 +9,13 @@ phases:
       - pip install -r requirements.txt -t build/
   build:
     commands:
+      - echo "Building Lambda deployment package..."
       - cd build/
-      - zip -r lambda_function.zip .
-      - ls
-      - aws s3 cp lambda_function.zip s3://dafdfedfad/
+      - zip -r ../lambda_function.zip . -x "*.git*"
+      - cd ..
+  post_build:
+    commands:
+      - echo "Lambda deployment package created successfully."
+artifacts:
+  files:
+    - lambda_function.zip
