@@ -6,14 +6,12 @@ phases:
       python: 3.11
   pre_build:
     commands:
-      - pip install -r requirements.txt -t build/
+      - pip install -r requirements.txt -t .
       - ls
       - pwd
   build:
     commands:
       - echo "Building Lambda deployment package..."
-      - ls
-      - cd build/
       - ls
       - zip -r ../lambda_function.zip . -x "*.git*"
       - cd ..
