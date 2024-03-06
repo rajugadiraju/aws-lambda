@@ -21,6 +21,3 @@ phases:
   post_build:
     commands:
       - echo "Lambda deployment package created successfully."
-artifacts:
-  files:
-    - lambda_function.zip
