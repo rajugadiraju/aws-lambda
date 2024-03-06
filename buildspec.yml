@@ -11,4 +11,5 @@ phases:
     commands:
       - cd build/
       - zip -r lambda_function.zip .
-      - aws s3 cp lambda_function.zip s3://dafdfedfad/
+      - ls
+      - aws s3 cp lambda_function.zip appspec.yml s3://dafdfedfad/
