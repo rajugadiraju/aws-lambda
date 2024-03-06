@@ -7,15 +7,10 @@ phases:
   pre_build:
     commands:
       - pip install -r requirements.txt -t .
-      - ls
-      - pwd
   build:
     commands:
       - echo "Building Lambda deployment package..."
-      - ls
-      - zip -r lambda_function.zip . -x "*.git*"
-      - ls
-      - pwd
+      - zip -r lambda_function.zip . -x "*.yml*"
       - aws lambda update-function-code --function-name mylambda --zip-file fileb://lambda_function.zip
       - sleep 10
       - aws lambda invoke --function-name my-function --payload file://./event.json output.json
